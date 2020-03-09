@@ -1,0 +1,25 @@
+
+    # min1 = []
+    # for i in corners :
+    #     min1.append((util.manhattanDistance(state[0],i),i))
+    # min1.sort()
+    
+    # ans=0
+    # for i in range(len(min1)):
+    #     ans = ans+util.manhattanDistance((x,y),min1[i][1])
+    #     x,y=min1[i][1]
+        
+    # if state[0] in list(problem.corners):
+    #     ans = 0
+    # if walls[x][y] :
+    #     ans = 99999
+    # return ans
+    min1 = float('inf')
+    for i in corners :
+        if min1 < util.manhattanDistance(state[0],i):
+            min1 = util.manhattanDistance(state[0],i)
+    if state[0] in list(problem.corners):
+        min1 = 0
+    if walls[x][y] :
+        min1 = 99999
+    return min1
